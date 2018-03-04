@@ -54,7 +54,7 @@ AddEventHandler('esx_anticombatlog:onPlayerJoin', function()
 					penalty = penalty - 1005
 				end
 							
-				TriggerServerEvent('esx_anticombatlog:update', true, PlayerData.identifier)
+				TriggerServerEvent('esx_anticombatlog:update', false, PlayerData.identifier)
 			end)
 		else
 			chat("4",_U('was_alive'))
