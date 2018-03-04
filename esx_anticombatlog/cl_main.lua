@@ -48,12 +48,16 @@ AddEventHandler('esx_anticombatlog:onPlayerJoin', function()
 				
 				while penalty > 0 do
 					if GetEntityHealth(GetPlayerPed(-1)) > 0 then
+						if Config.ReviveAndKill then
+							TriggerEvent('esx_ambulancejob:revive')
+							Citizen.Wait(1150) --revive takes around 160X ms
+						end 
 						SetEntityHealth(GetPlayerPed(-1), 0)
 					end
 					Citizen.Wait(1000)
 					penalty = penalty - 1005
 				end
-							
+				
 				TriggerServerEvent('esx_anticombatlog:update', false, PlayerData.identifier)
 			end)
 		else
