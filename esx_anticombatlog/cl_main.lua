@@ -53,7 +53,8 @@ AddEventHandler('esx_anticombatlog:onPlayerJoin', function()
 					Citizen.Wait(1000)
 					penalty = penalty - 1005
 				end
-				
+							
+				TriggerServerEvent('esx_anticombatlog:update', true, PlayerData.identifier)
 			end)
 		else
 			chat("4",_U('was_alive'))
