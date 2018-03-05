@@ -56,7 +56,6 @@ AddEventHandler('esx_anticombatlog:startPenalty', function()
 			penalty = penalty - 1015
 		end
 				
-		TriggerServerEvent('esx_anticombatlog:update', false, PlayerData.identifier)
 	end)
 	
 end)
